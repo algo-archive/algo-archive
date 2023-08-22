@@ -2,6 +2,10 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import CodeViewer from './components/CodeViewer.jsx';
 import QuestionsList from './components/QuestionsList.jsx';
+// import LoginButton from './LoginButton.jsx';
+// import LogoutButton from './LogoutButton.jsx';
+import AuthenticationButtons from './Authentication.jsx'
+import { useAuth0 } from '@auth0/auth0-react';
 // import logo from './components/batfish.jpg';
 
 const App = () => {
@@ -121,11 +125,21 @@ const App = () => {
   useEffect(() => {
     fetchAndUpdateTitles();
   }, []);
-  
+  const { isAuthenticated } = useAuth0();
   return (
     <div className='App'>
+      <nav>
+        <ul>
+        {/* <li> <LoginButton /> </li>
+        <li> <LogoutButton /> </li> */}
+        <li> <AuthenticationButtons /> </li>
+        </ul>
+      </nav>
+      {isAuthenticated && (<>
       <QuestionsList value="tbu" title={title} handleDeleteClick={handleDeleteClick} handleAccessDataClick={handleAccessDataClick} titleCards={titleCards}/>
       <CodeViewer value="tbu" title={title} description={description} solution={solution} comments ={comments} handleClear = {handleClear} handleAccessDataClick={handleAccessDataClick} setTitle={setTitle} setDescription={setDescription} setSolution={setSolution} setComments={setComments} handleAddTitle={handleAddTitle}/>
+      </>
+      )}
       <img 
       // src={require('./components/batfish.jpg')}
       // src = {logo}
@@ -133,7 +147,6 @@ const App = () => {
       alt="Batfish Logo"
       style={{height:"150px", width:"150px", alignSelf: 'flex-start'}}
       /> 
-
     </div>
   )
 }
