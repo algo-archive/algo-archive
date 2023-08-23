@@ -37,31 +37,27 @@ describe('Route integration', () => {
 
     describe('/api', () => { 
         describe('/createProblem', () => {
+          let problemList;
+            beforeEach(() => {
+                problemList = {
+                    title: 'testabc12345', description: 'xyz', solution: '123', comments: ''
+                }
+            })
+
             it('post request to /api/createProblem',  () => {
-                const problemList = { title : 'thisisttitle', description : 'briefdesc', solution : 'answer', comments : 'comments!!'}
                 return request(server)
                 .post('/api/createProblem')
                 .send(problemList)
                 .set('Accept', 'application/json').expect('Content-Type', /json/)
                 .expect(200);
-                // .then(response => {
-                //     expect(response.status).toBe(200);
-                //     expect(response.header['content-type']).toMatch(/application\/json/);
-                // })
-                // .catch(error => {
-                //     console.error('Error:', error.message);
-                // });
-            })
-            it('post request to /api/createProblem', async () => {
-                const problemList = { title: 'thisisttitle', description: 'briefdesc', solution: 'answer', comments: 'comments!!' };
-                console.log('Sending request with data:', problemList); // Debug log
-                return await request(server)
-                  .post('/api/createProblem')
-                  .send(problemList)
-                  .expect(200);
-              });
-              
+            })       
+            it('post request to /api/deleteProblem',  () => {
+                return request(server)
+                .delete('/api/deleteProblem')
+                .send({title : problemList.title})
+                .set('Accept', 'application/json').expect('Content-Type', /json/)
+                .expect(200);
+            })       
         })
     });
 })
-
