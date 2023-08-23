@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import '../style.css';
-import './CodeViewer.css';
+// import '../style.css';
+// import './CodeViewer.css';
 
 const CodeViewer = ((props) => {
 

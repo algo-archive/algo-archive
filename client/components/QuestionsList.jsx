@@ -1,8 +1,8 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import TitleCard from './TitleCard.jsx';
-import '../style.css';
-import './QuestionsList.css';
+// import '../style.css';
+// import './QuestionsList.css';
 
 
 const QuestionsList = (props) => {

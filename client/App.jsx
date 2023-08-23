@@ -4,6 +4,7 @@ import CodeViewer from './components/CodeViewer.jsx';
 import QuestionsList from './components/QuestionsList.jsx';
 import AuthenticationButtons from './Authentication.jsx'
 import { useAuth0 } from '@auth0/auth0-react';
+import Profile from './profile.jsx'
 // import logo from './components/batfish.jpg';
 
 const App = () => {
@@ -78,12 +79,14 @@ const App = () => {
   //FUNCTION THAT ADDS A NEW PROBLEM
   const handleAddTitle = async (e) => {
     e.preventDefault();
+    const { user } = useAuth0();
 
     const newProblem = {
       title,
       description,
       solution,
-      comments
+      comments,
+      // created_by
     };
 
     if(titleCards.titles.includes(title)){
@@ -129,6 +132,7 @@ const App = () => {
       <nav>
         <ul>
         <li> <AuthenticationButtons /> </li>
+        <li> <Profile /> </li>
         </ul>
       </nav>
       {isAuthenticated && (<>

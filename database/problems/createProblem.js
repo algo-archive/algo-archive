@@ -7,7 +7,7 @@ const db = require('../model')
 const createProblem = async (req, res, next) =>{
   try {
     const { title, description, solution, comments} = req.body;
-  
+  console.log(req.body);
     const queryString = `
     INSERT INTO problems (title, description, solution, comments)
     VALUES ('${title}', '${description}', '${solution}', '${comments}');`;
