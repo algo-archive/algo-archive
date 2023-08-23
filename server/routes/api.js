@@ -3,11 +3,6 @@ const allActions = require('../../database/allActions');
 
 const router = express.Router();
 
-// // req.isAuthenticated is provided from the auth router
-// router.get('/', (req, res) => {
-//   res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
-// });
-
 router.post('/createProblem', allActions.createProblem, (req, res) => {
   const { successful } = res.locals;
   if (successful) {

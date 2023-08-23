@@ -2,8 +2,6 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import CodeViewer from './components/CodeViewer.jsx';
 import QuestionsList from './components/QuestionsList.jsx';
-// import LoginButton from './LoginButton.jsx';
-// import LogoutButton from './LogoutButton.jsx';
 import AuthenticationButtons from './Authentication.jsx'
 import { useAuth0 } from '@auth0/auth0-react';
 // import logo from './components/batfish.jpg';
@@ -130,8 +128,6 @@ const App = () => {
     <div className='App'>
       <nav>
         <ul>
-        {/* <li> <LoginButton /> </li>
-        <li> <LogoutButton /> </li> */}
         <li> <AuthenticationButtons /> </li>
         </ul>
       </nav>
