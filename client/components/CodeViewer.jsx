@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-// import '../style.css';
-// import './CodeViewer.css';
+import '../style.css';
+import './CodeViewer.css';
 
 const CodeViewer = ((props) => {
 
@@ -9,7 +9,7 @@ const CodeViewer = ((props) => {
 
   return (
   //Unloaded Blank page
-  <form onSubmit={handleAddTitle} className='codeViewer'>
+  <form onSubmit={handleAddTitle} className='codeViewer' data-testid="form">
     <label className='title'>
       Challenge Title:
       <input
@@ -50,7 +50,7 @@ const CodeViewer = ((props) => {
     </label>
     <br />
     <div className='buttons'>
-      <button className="clear" title={title} onClick={handleClear}> Clear </button>
+      <button className="clear" title={title} onClick={handleClear}>Clear</button>
       <button type='submit'>Submit</button>
     </div>
   </form>

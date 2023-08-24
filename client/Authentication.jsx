@@ -11,7 +11,13 @@ const AuthenticationButtons = () => {
       </button>
     );
   } else {
-    return <button onClick={() => loginWithRedirect()}>Log In</button>;
+    return <button onClick={() => loginWithRedirect()}>Log In</button>
+    // (
+    //   <div>
+    //   <img src="">
+    // <button onClick={() => loginWithRedirect()}>Log In</button>
+    // </div>
+    // );
   }
 };
 

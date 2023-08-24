@@ -2,7 +2,7 @@ import React from 'react';
 import DeleteIcon from '@mui/icons-material/Delete';
 import IconButton from '@mui/material/IconButton';
 import Button from '@mui/material/Button';
-// import './TitleCard.css'
+import './TitleCard.css'
 
 function TitleCard(props) {
   const { title, handleDeleteClick, handleAccessDataClick } = props;
