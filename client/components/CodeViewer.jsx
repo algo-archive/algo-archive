@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import '../style.css';
 import './CodeViewer.css';
+import CodeEditor from './CodeEditor.jsx'
 
 const CodeViewer = ((props) => {
 
@@ -32,10 +33,14 @@ const CodeViewer = ((props) => {
 
     <label className='solution'>
       Challenge Solution:
-      <textarea
+      {/* <textarea
       type='text'
       value={solution}
       onChange={(e) => setSolution(e.target.value)}
+      /> */}
+      <CodeEditor
+        value={solution}
+        onChange={(e) => setSolution(e.target.value)}
       />
     </label>
     <br />

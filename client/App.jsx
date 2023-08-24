@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import CodeViewer from './components/CodeViewer.jsx';
 import QuestionsList from './components/QuestionsList.jsx';
 import AuthenticationButtons from './Authentication.jsx'
+import CodeEditor from './components/CodeEditor.jsx'
 import { useAuth0 } from '@auth0/auth0-react';
 import Profile from './profile.jsx'
 
@@ -134,6 +135,7 @@ const App = () => {
       {isAuthenticated && (<>
       <QuestionsList value="tbu" title={title} handleDeleteClick={handleDeleteClick} handleAccessDataClick={handleAccessDataClick} titleCards={titleCards}/>
       <CodeViewer value="tbu" title={title} description={description} solution={solution} comments ={comments} handleClear = {handleClear} handleAccessDataClick={handleAccessDataClick} setTitle={setTitle} setDescription={setDescription} setSolution={setSolution} setComments={setComments} handleAddTitle={handleAddTitle}/>
+      {/* <CodeEditor/> */}
       </>
       )}
       <nav>
