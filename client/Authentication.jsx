@@ -17,7 +17,7 @@ const AuthenticationButtons =  () => {
       </button>
     );
   } else {
-    return 'something';
+    return null;
   }
 };
 
