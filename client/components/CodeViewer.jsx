@@ -53,9 +53,9 @@ const CodeViewer = ((props) => {
         onChange={setSolution}
       />
     </label>
-    <div className='buttons'>
+    {/* <div className='buttons'>
      <button onClick={executeCode}>Run Code</button>
-    </div>
+    </div> */}
     <br/>
     {/* <div>Output: {output}</div> */}
     <label className='output'>
