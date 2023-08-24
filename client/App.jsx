@@ -5,7 +5,6 @@ import QuestionsList from './components/QuestionsList.jsx';
 import AuthenticationButtons from './Authentication.jsx'
 import { useAuth0 } from '@auth0/auth0-react';
 import Profile from './profile.jsx'
-// import logo from './components/batfish.jpg';
 
 const App = () => {
 // STATE HOOKS
@@ -30,6 +29,7 @@ const App = () => {
 
   const handleAccessDataClick = async (e)=> {
     const clickedTitle = e.target.title;
+    console.log(32,clickedTitle)
     try {
       //readProblem sends title on req.body
       const response = await fetch(`/api/readProblem`, {
@@ -39,6 +39,7 @@ const App = () => {
         body: JSON.stringify({title: clickedTitle})
       });
       const data = await response.json();
+      console.log(42, data)
       const { title, description, solution, comments } = data;
       setTitle(title);
       setDescription(description);
@@ -79,7 +80,7 @@ const App = () => {
   //FUNCTION THAT ADDS A NEW PROBLEM
   const handleAddTitle = async (e) => {
     e.preventDefault();
-    const { user } = useAuth0();
+    //const { user } = useAuth0();
 
     const newProblem = {
       title,
@@ -136,8 +137,8 @@ const App = () => {
       </>
       )}
       <nav>
-        <AuthenticationButtons />
         <Profile />
+        <AuthenticationButtons />
       </nav>
     </div>
   )

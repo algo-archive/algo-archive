@@ -16,7 +16,7 @@ root.render(
         }}
       >
         <App />
-      </Auth0Provider>,
+    </Auth0Provider>,
 );
 
 // ReactDOM.render(<App />, document.getElementById('root'));
