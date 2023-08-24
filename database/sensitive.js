@@ -1,4 +1,4 @@
-const dbConnection = 'postgres://khnlzpcv:XAmRONcUAIo6c7IaIL2oAUtVmw1p6xCL@ruby.db.elephantsql.com/khnlzpcv';
+const dbConnection = 'postgres://cjtusfzp:1HyM-4LkY3f4MNz2xVFSHGgFkx15kSkM@batyr.db.elephantsql.com/cjtusfzp';
 
 module.exports = {
   dbConnection,
