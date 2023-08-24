@@ -2,27 +2,23 @@ import React, { useState } from "react";
 import CodeMirror from "@uiw/react-codemirror";
 import { javascript } from "@codemirror/lang-javascript";
 
-export default function CodeEditor({value}) {
-  const onChange = React.useCallback((value, viewUpdate) => {
-    console.log("value:", value);
-  }, []);
+export default function CodeEditor({value, onChange}) {
+  const handleEditorChange = React.useCallback((editorValue, viewUpdate) => {
+    console.log("value:", editorValue);
+    if(onChange) {
+        onChange(editorValue);
+    }
+  }, [onChange]);
+
   return (
     <div class="editor">
       <CodeMirror
         value={value}
         height="200px"
-        theme="dark"
+        theme="light"
         extensions={[javascript({ jsx: true })]}
-        onChange={onChange}
+        onChange={handleEditorChange}
       />
-      {/* <CodeMirror
-        value="console.log('hello world!');"
-        height="200px"
-        extensions={[javascript({ jsx: true })]}
-        onChange={(value, viewUpdate) => {
-          console.log("value:", value);
-        }}
-      /> */}
     </div>
   );
 }

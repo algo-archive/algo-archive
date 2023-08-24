@@ -45,6 +45,7 @@ const App = () => {
       setTitle(title);
       setDescription(description);
       setSolution(solution);
+      // cm.setValue(solution)
       setComments(comments);
     }
     catch (error) {
